@@ -47,9 +47,11 @@ getList = () => {
         url: baseurl + "/cart/list/all",
         method: 'GET',
         success:function(result_dua){
-            console.log(result_dua);
+            console.log(result_dua.result);
             if(result_dua.status == "success"){
                 $(".count").html(result_dua.result.count);
+                $(".total").html(result_dua.result.price);
+                $(".totalbarang").html(result_dua.result.count);
             }
         }
     });

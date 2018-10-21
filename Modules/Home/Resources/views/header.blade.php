@@ -11,7 +11,7 @@
                         <li class='nav-item'><a class="nav-link active" href="#">terbaru</a></li>
                         <li class='nav-item'><a class="nav-link" href="#">termurah</a></li>
                         <li class='nav-item'><a class="nav-link" href="#">terlaris</a></li>
-                        <li class='nav-item'><a class="nav-link" href="#">terpopuler</a></li>
+                        <li class='nav-item'><a class="nav-link" href="#">Promo</a></li>
                         <li></li>
                     </ul>
                 </div>

@@ -10,13 +10,18 @@
         <section class='container cartcontent'>
             @foreach($cart['data'] as $items => $item)
                 <div class="media">
+                    <span aria-hidden="true" class='deleteProduct'>×</span>
                     <img class="mr-3 img-thumbnail col-5" src="{{url('image/'.$item->photo[0]->url)}}" alt="Generic placeholder image">
                     <div class="media-body">
                         <h5 class="mt-0">{{$item->product_name}}</h5>
-                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </p>
+                        <div class='mt-12'>
+                            <span>Hitam</span> - <span>XXL</span>
+                        </div>
+                        <br>
+                        <div class="mt-12">Rp.  {{$item->price}}</div>
+    
                         <div class="number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
                             <input class="quantity" min="0" name="quantity" value="{{$item->count}}" type="number">
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                         </div>
@@ -29,7 +34,7 @@
             <div class='col-8'>
                Total :  Rp. <span class='total'>0</span>
             </div>
-            <div class='col-4'>Jumlah Item: <span> 1 </span> </div>
+            <div class='col-4'>Jumlah Item: <span class="totalbarang"> 1 </span> </div>
             <a href='{{url("/home/next")}}' class='col-12'> <button type="button" class="btn btn-primary col-12">Lanjutkan</button></a>
         </section>
     </section>

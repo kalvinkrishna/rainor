@@ -5,6 +5,15 @@
     left: 0px;
     z-index: 999;
 }
+.media{
+    position: relative;
+}
+.harga{
+    position: absolute;
+    top:60%;
+    left: 12%;
+}
+
 .hidden{
     display: none;
 }
@@ -177,4 +186,10 @@ input[type="number"] {
 
   .contents{
         margin-top: 15%;
+  }
+
+  .deleteProduct{
+      position: absolute;
+      right: 10%;
+      top: 5%;
   }

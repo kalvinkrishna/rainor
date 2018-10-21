@@ -57,7 +57,8 @@ class CartController extends Controller
             "status" => "success",
             "result" => [
                 "data"  => $data->all_cart,
-                "count" => $data->count()
+                "count" => $data->count(),
+                "price" => $data->price_count
             ]
         ]);
     }

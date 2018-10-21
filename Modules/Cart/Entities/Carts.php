@@ -32,10 +32,16 @@ class Carts extends Model
             ->groupBy('id_products')->get();
 
         foreach($cartList as $product){
+            $product->price =  number_format($product->price ,0,'','.');
             $product->photo =  Product::find($product->id)->productphoto;
         }
 
         return $cartList;
+    }
+
+    public function getPriceCountAttribute(){
+        $product = $this->join('product','product.id','=','cart.id_products')->get()->sum('price');
+        return  number_format($product ,0,'','.');
     }
  
 
