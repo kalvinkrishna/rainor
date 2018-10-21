@@ -11,11 +11,7 @@
                         <li class='nav-item'><a class="nav-link active" href="#">terbaru</a></li>
                         <li class='nav-item'><a class="nav-link" href="#">termurah</a></li>
                         <li class='nav-item'><a class="nav-link" href="#">terlaris</a></li>
-<<<<<<< HEAD
                         <li class='nav-item'><a class="nav-link" href="#">Promo</a></li>
-=======
-                        <li class='nav-item'><a class="nav-link" href="#">promo</a></li>
->>>>>>> 15aec875a5bb681dadaf5c229c13074c62dc1afa
                         <li></li>
                     </ul>
                 </div>
