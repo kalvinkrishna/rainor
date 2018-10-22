@@ -26,7 +26,7 @@
                 
                @foreach($product as $value) 
                     <div class="product container">
-                    @if($value->isBanner)
+                    @if($value['isBanner'])
                     <div class='items'>
                         <a href="{{url('product/collection/'.$idx)}}">
                         <div class="imageslide">
@@ -64,8 +64,9 @@
                                 </div>
                         </div>
                         </a>
-                    @endif
+                   
                     </div>
+                    @endif
                 </div>
                @endforeach 
         @endforeach
