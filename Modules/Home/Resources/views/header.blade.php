@@ -8,8 +8,8 @@
             <section class='menu-tengah col-8'>
                 <div class="navbar justify-content-center">
                     <ul class='nav'>
-                        <li class='nav-item'><a class="nav-link active" href="#">terbaru</a></li>
-                        <li class='nav-item'><a class="nav-link" href="#">termurah</a></li>
+                        <li class='nav-item'><a class="nav-link active" href="{{url('product/collection/terbaru')}}">terbaru</a></li>
+                        <li class='nav-item'><a class="nav-link" href="{{url('product/collection/termurah')}}">termurah</a></li>
                         <li class='nav-item'><a class="nav-link" href="#">terlaris</a></li>
                         <li class='nav-item'><a class="nav-link" href="#">Promo</a></li>
                         <li></li>

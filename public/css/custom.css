@@ -190,6 +190,15 @@ input[type="number"] {
 
   .deleteProduct{
       position: absolute;
-      right: 10%;
-      top: 5%;
+      right: 5%;
+      top: 4%;
+      font-size: 22pt;
+      cursor: pointer;
+  }
+
+  a.subcategories{
+      margin: 5px;
+      text-transform: capitalize;
+      text-align: center;
+      font-size: 14pt;
   }

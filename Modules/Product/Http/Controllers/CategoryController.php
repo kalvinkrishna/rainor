@@ -17,13 +17,14 @@ class CategoryController extends Controller
             $this->CartController = \Modules\Cart\Http\Controllers\CartController::class;
         }
     }
-    public function findcategory(Request $request, $category){
+    public function findcategory(Request $request, $category, $subcategory = null){
         $product = new Product;
         $data = [
-            "content" => $product->getAllProduct($category),
+            "content" => empty($subcategory) ? $product->getAllProduct($category) : $product->getAllProduct($category,$subcategory),
             "category"=> $category,
             'cart'    => app($this->CartController)->getlistCart()->original['result']
         ];
         return view('product::collection',$data);;
     }
+
 }

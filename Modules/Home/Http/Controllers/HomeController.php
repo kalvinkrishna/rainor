@@ -30,13 +30,13 @@ class HomeController extends Controller
     public function index()
     {
         $list = app($this->ProductController)->getAllProduct();
+
+        $category = collect($list->original);
+
         $data = [
-            "productlist" => $list->original,
-            'categories'  => $list->original->pluck('categories')->unique(),
-            'cart'        => app($this->CartController)->getlistCart()->original['result']
+            "productlist" => $category->groupBy('categories')->toArray(),
+            'cart'        => app($this->CartController)->getlistCart()->original['result'],
         ];
-        
-        // $data = collect($list->original);
         
         return view('home::home',$data);
     }

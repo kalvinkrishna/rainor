@@ -76,10 +76,11 @@ class ProductController extends Controller
   public function getAllProduct(){
       $product = new Product;
       $products = $product->all();
-    
+      
       foreach($products as $product){
           $product->price = number_format($product->price ,0,'','.');
           $product->photo =  $product->find($product->id)->productphoto;
+          $product->subCategories = $product->find($product->id)->productSubCategory->pluck('nama_categories');
       }
     
       return response()->json($products);

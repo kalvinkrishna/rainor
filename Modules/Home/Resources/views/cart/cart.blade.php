@@ -10,7 +10,7 @@
         <section class='container cartcontent'>
             @foreach($cart['data'] as $items => $item)
                 <div class="media">
-                    <span aria-hidden="true" class='deleteProduct'>×</span>
+                    <span aria-hidden="true" class='deleteProduct' data-items='{{$item->id}}'>×</span>
                     <img class="mr-3 img-thumbnail col-5" src="{{url('image/'.$item->photo[0]->url)}}" alt="Generic placeholder image">
                     <div class="media-body">
                         <h5 class="mt-0">{{$item->product_name}}</h5>
@@ -21,9 +21,9 @@
                         <div class="mt-12">Rp.  {{$item->price}}</div>
     
                         <div class="number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class='delete-count' data-items='{{$item->id}}'></button>
                             <input class="quantity" min="0" name="quantity" value="{{$item->count}}" type="number">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus plus-count" data-items='{{$item->id}}'></button>
                         </div>
                     </div>
                 </div>

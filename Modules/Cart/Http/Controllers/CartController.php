@@ -45,7 +45,6 @@ class CartController extends Controller
             "status" => "success",
             "result" => [
                 "data"  => $data->all_cart,
-                "count" => $data->count
             ]
         ]);
     }
@@ -63,10 +62,15 @@ class CartController extends Controller
         ]);
     }
 
-    public function checkoutCart($data){
-        $cart = new Cart;
+    public function deleteCart($data,$qty=null){
+        $cart = new Carts;
+        $cart = $cart->where('id_products',$data);
+        
+        if(!empty($qty)){
+            $cart = $cart->orderBy("id_products", "DESC")->take(1);
+        }
 
-        $cart::find($data->id)->delete();
+        $cart->delete();
     }
 
 }
