@@ -26,7 +26,7 @@
                 
                @foreach($product as $value) 
                     <div class="product container">
-                    @if($value->is_banner)
+                    @if($value->isBanner)
                     <div class='items'>
                         <a href="{{url('product/collection/'.$idx)}}">
                         <div class="imageslide">
