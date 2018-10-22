@@ -10,8 +10,11 @@
         <section class='container cartcontent'>
             @foreach($cart['data'] as $items => $item)
                 <div class="media">
+                    @php 
+                        $foto = (isset($item->photo[0]->url))? $item->photo[0]->url : "500x500.png";
+                    @endphp
                     <span aria-hidden="true" class='deleteProduct' data-items='{{$item->id}}'>×</span>
-                    <img class="mr-3 img-thumbnail col-5" src="{{url('image/'.$item->photo[0]->url)}}" alt="Generic placeholder image">
+                    <img class="mr-3 img-thumbnail col-5" src="{{url('image/'.$foto)}}" alt="Generic placeholder image">
                     <div class="media-body">
                         <h5 class="mt-0">{{$item->product_name}}</h5>
                         <div class='mt-12'>

@@ -25,7 +25,7 @@
         <br>
         <h2>Product Information</h2>
         <div class='row'>
-            @foreach($carts as $cart)
+            @foreach($carts['data'] as $cart)
                 <div class="col-12">    
                     <div class='col-2'>
                         <img src="{{asset('image/'.$cart->photo[0]->url)}}">
