@@ -66,7 +66,7 @@ class HomeController extends Controller
        
         $review = [
             "customer" => $customerBiodata,
-            "carts"     => $cart->all_cart
+            'carts'    => app($this->CartController)->getlistCart()->original['result']
         ];
 
         return view("home::transactionreview",$review);
