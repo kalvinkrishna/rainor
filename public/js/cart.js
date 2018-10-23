@@ -3,7 +3,7 @@ var click = true;
 $(document).ready(() => {
     getList();
 
-    $(".deleteProduct").on('click',function(){
+    $(document).on('click',".deleteProduct",function(){
         
         deleteProduct($(this).data('items'));   
         getList();
