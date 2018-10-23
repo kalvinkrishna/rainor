@@ -13,14 +13,13 @@ $(document).ready(() => {
 
     $(document).on('click','.delete-count',function(){
         deleteProduct($(this).data('items'),$(this).parents().find('.quantity').val());
-        getList();
+       
         if($(this).parents().find('.quantity').val() == 0){
                 $(this).parents(".media").remove();
         }
     });
     $(document).on('click','.plus-count',function(){
         addCart($(this).data('items'));
-        getList();
     });
 
     $(document).on('click','.countdown',function(){
@@ -155,7 +154,9 @@ deleteProduct = (deleteid,qty=null) => {
             url: baseurl + '/cart/list/delete/'+ deleteid + '/' + qty,
             method: 'GET',
             success:function(result){
-                console.log(result);
+                if(result.status="success"){
+                    getList();
+                }
             }
         });
     } else {
