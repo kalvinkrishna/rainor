@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('home');
+Route::prefix('promoproduct')->group(function() {
+    Route::get('/', 'PromoProductController@index');
 });
-
-
-Route::get('/cities/list/{id}','Controller@getCity');
-Route::get('/state/list/{id}', 'Controller@getState');

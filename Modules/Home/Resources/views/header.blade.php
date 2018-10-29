@@ -11,7 +11,7 @@
                         <li class='nav-item'><a class="nav-link active" href="{{url('product/collection/terbaru')}}">terbaru</a></li>
                         <li class='nav-item'><a class="nav-link" href="{{url('product/collection/termurah')}}">termurah</a></li>
                         <li class='nav-item'><a class="nav-link" href="#">terlaris</a></li>
-                        <li class='nav-item'><a class="nav-link" href="#">Promo</a></li>
+                        <li class='nav-item'><a class="nav-link" href="{{url('product/collection/promo')}}">Promo</a></li>
                         <li></li>
                     </ul>
                 </div>

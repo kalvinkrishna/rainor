@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/promoproduct",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\PromoProduct\\Providers\\PromoProductServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\PromoProduct\\": ""
+        }
+    }
+}

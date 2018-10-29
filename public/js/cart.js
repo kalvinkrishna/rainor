@@ -136,7 +136,7 @@ getList = () => {
                     }
                 });
                
-                
+                console.log(result_dua.result);
                 $(".count").html(result_dua.result.count);
                 $(".total").html(result_dua.result.price);
                 $(".totalbarang").html(result_dua.result.count);
