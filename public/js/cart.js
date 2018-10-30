@@ -5,6 +5,10 @@ $(document).ready(function(){
         $(this).parent().find('span.variant-picker').removeClass('focus');
         $(this).addClass('focus');
     });
+
+    $(document).on('click','.detail',function(){
+        $(this).parents('.product.container').find('div.description').toggle();
+    });
 });
 
 $(document).ready(() => {
@@ -123,6 +127,8 @@ getList = () => {
                             template += ' <button class="plus plus-count countup" data-items="'+value.id+'"></button>';
                             template += '</div>';
                             template += '</div>';
+
+                        template += '<div class="detail"><span class="oi oi-chevron-bottom"></span></div>';
                         template += '</div>';
 
                         $('.cartcontent').append(template);
@@ -162,6 +168,8 @@ getList = () => {
                             template += ' <button class="plus plus-count countup" data-items="'+value.id+'"></button>';
                             template += '</div>';
                             template += '</div>';
+
+                        template += '<div class="detail"><span class="oi oi-chevron-bottom"></span></div>';
                         template += '</div>';
 
 

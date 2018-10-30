@@ -72,7 +72,16 @@
                                     <div class="col-5">
                                         <button type='button' class='btn btn-primary btn-lg' onClick='addCart({{$product->id_product}})' data-items='{{ $product->id_product }}'>Add to Cart <span class="oi oi-cart" title="icon name" aria-hidden="true"></span></button>
                                     </div>
+                                    <div class="detail"><span class="oi oi-chevron-bottom"></span></div>
                                 </div>
+                            </div>
+                           
+                            <div data-description='description' class='col-6 row descript description align-items-center hidden'>
+                                <h3>
+                                    {{$product->product_name}}
+                                    <small class="text-muted">With faded secondary text</small>
+                                </h3>
+                                {{$product->description}}
                             </div>
                         </div>
                     </div>

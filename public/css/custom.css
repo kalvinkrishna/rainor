@@ -39,6 +39,10 @@
     margin: auto;
     text-align: left;
 }
+.descript.description{
+    background:white !important;
+    box-shadow: 1px 0px 5px #2C3A47;
+}
 
 .product{
     margin: 3% 5px;
@@ -250,4 +254,16 @@ input[type="number"] {
   .shipping img{
       background:beige;
       border: none;
+  }
+
+  .media {
+      padding:10px;
+  }
+
+  .detail{
+      position: absolute;
+      left: 50%;
+      top: 90%;
+      cursor: pointer;
+      font-size: 14pt;
   }

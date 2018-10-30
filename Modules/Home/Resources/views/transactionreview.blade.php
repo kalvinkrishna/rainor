@@ -63,7 +63,6 @@
                     <p class='text-center'>Laut</p>
                 </div>
                 <div class='col-4'>
-                   
                     <img class='img-thumbnail mx-auto d-block col-10' src="{{asset('image/airplane-shape.png')}}" alt="">
                     <p class='text-center'>Udara</p>
                 </div>
