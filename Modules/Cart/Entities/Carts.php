@@ -20,17 +20,16 @@ class Carts extends Model
     public function product(){
         return $this->belongsTo('Modules\Product\Entities\Products');
     }
-    
+
     public function user(){
         return $this->belongsTo('App\User','id_user','id');
     }
 
     public function getAllCartAttribute(){
-        $cartList = $this->select("product.*",DB::raw('count(id_products) as count'))
-            ->join('product','product.id','=','cart.id_products')
-            ->where('id_user', 0)
+        $cartList = \Modules\Product\Entities\Product::join('cart','product.id','=','cart.id_products')->where('id_user', 0)
+            ->select("product.*",DB::raw('count(id_products) as count'))
             ->groupBy('id_products')->get();
-
+            
         foreach($cartList as $product){
             $product->price =  number_format($product->price ,0,'','.');
             $product->photo =  Product::find($product->id)->productphoto;

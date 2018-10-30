@@ -18,7 +18,13 @@
                     <div class="media-body">
                         <h5 class="mt-0">{{$item->product_name}}</h5>
                         <div class='mt-12'>
-                            <span>Hitam</span> - <span>XXL</span>
+                            @if(!empty($item->variantWarna))
+                                    <div class='row variant ukuran'>
+                                            @foreach($item->variantWarna as $color)
+                                                <span class='variant-picker' data-key="{{$color->id}}">{{$color->key}}</span>
+                                            @endforeach
+                                    </div>
+                            @endif
                         </div>
                         <br>
                         <div class="mt-12">Rp.  {{$item->price}}</div>
@@ -28,6 +34,8 @@
                             <input class="quantity" min="0" name="quantity" value="{{$item->count}}" type="number">
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus plus-count" data-items='{{$item->id}}'></button>
                         </div>
+
+                        
                     </div>
                 </div>
             @endforeach

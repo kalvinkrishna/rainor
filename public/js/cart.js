@@ -1,7 +1,7 @@
 var click = true;
 
 $(document).ready(function(){
-    $(".variant-picker").click(function(){
+    $(document).on('click','.variant-picker',function(){
         $(this).parent().find('span.variant-picker').removeClass('focus');
         $(this).addClass('focus');
     });
@@ -98,7 +98,21 @@ getList = () => {
                             template += '<h5 class="mt-0">'+value.product_name+'</h5>';
 
                             template += '<div class="mt-12">';
-                            template += ' <span>Hitam</span> - <span>XXL</span>';
+                            
+                            $.each(value.variantSize,function(idx,variant){
+                             
+                                template += "<span class='variant-picker carts' data-key='"+variant.id+"'>"+variant.key+"</span>";
+                                
+                            });
+                            template += '</div>';
+                            
+                            template += '<div class="mt-12">';
+                            
+                            $.each(value.variantWarna,function(idx,variant){
+                             
+                                template += "<span class='variant-picker carts' data-key='"+variant.id+"'>"+variant.key+"</span>";
+                                
+                            });
                             template += '</div>';
 
                             template += '<br>';
@@ -123,7 +137,21 @@ getList = () => {
                             template += '<h5 class="mt-0">'+value.product_name+'</h5>';
 
                             template += '<div class="mt-12">';
-                            template += ' <span>Hitam</span> - <span>XXL</span>';
+                            
+                            $.each(value.variantSize,function(idx,variant){
+                             
+                                template += "<span class='variant-picker carts' data-key='"+variant.id+"'>"+variant.key+"</span>";
+                                
+                            });
+                            template += '</div>';
+                            
+                            template += '<div class="mt-12">';
+                            
+                            $.each(value.variantWarna,function(idx,variant){
+                             
+                                template += "<span class='variant-picker carts' data-key='"+variant.id+"'>"+variant.key+"</span>";
+                                
+                            });
                             template += '</div>';
 
                             template += '<br>';

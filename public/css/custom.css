@@ -190,8 +190,8 @@ input[type="number"] {
 
   .deleteProduct{
       position: absolute;
-      right: 5%;
-      top: 4%;
+      right: 1%;
+      top: 0%;
       font-size: 22pt;
       cursor: pointer;
   }
@@ -217,8 +217,11 @@ input[type="number"] {
       text-align: center;
       width: 50px;
       text-transform: capitalize;
+      display: inline-block;
   }
-
+  .variant-picker.carts.focus{
+      background: #2C3A47;
+  }
   .variant-picker.focus{
       border: #dff9fb solid;
       box-shadow: -1px 0px 11.5px #dff9fb;

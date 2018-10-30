@@ -30,11 +30,11 @@ class Product extends Model
     }
 
     public function getVariantWarnaAttribute(){
-        return  $this->attributes['variantWarna'] = \Modules\Product\Entities\Variant::where('group','warna')->get();
+        return  $this->attributes['variantWarna'] = \Modules\Product\Entities\Variant::where('group','warna')->groupBy('key')->get();
     }
 
     public function getVariantSizeAttribute(){
-        return $this->attributes['variantSize'] = \Modules\Product\Entities\Variant::where('group','ukuran')->get();
+        return $this->attributes['variantSize'] = \Modules\Product\Entities\Variant::where('group','ukuran')->groupBy('key')->get();
     }
 
     public function getLowestAttribute(){

@@ -60,7 +60,7 @@
                                             </div>
                                         @endif
 
-                                         @if(!empty($product->variantSize))
+                                        @if(!empty($product->variantSize))
                                             <div class='row variant ukuran'>
                                                 @foreach($product->variantSize as $size)
                                                     <span class='variant-picker' data-key="{{$size->id}}">{{$size->key}}</span>
