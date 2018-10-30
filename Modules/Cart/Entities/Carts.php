@@ -20,7 +20,7 @@ class Carts extends Model
     public function product(){
         return $this->belongsTo('Modules\Product\Entities\Products');
     }
-
+    
     public function user(){
         return $this->belongsTo('App\User','id_user','id');
     }

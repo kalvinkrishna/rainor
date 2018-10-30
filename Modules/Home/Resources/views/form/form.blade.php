@@ -26,14 +26,6 @@
         @endforeach
     </select>
   </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">City</label>
-    <select name="Cities" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        @foreach($cities as $city)
-            <option value = "{{$city->id_city}}">{{$city->name}}</option>
-        @endforeach 
-    </select>
-  </div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">State</label>
@@ -43,6 +35,17 @@
         @endforeach 
     </select>
   </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">City</label>
+    <select name="Cities" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        @foreach($cities as $city)
+            <option value = "{{$city->id_city}}">{{$city->name}}</option>
+        @endforeach 
+    </select>
+  </div>
+
+  
  
   <div class="form-group">
     <label for="exampleInputEmail1">Address</label>
