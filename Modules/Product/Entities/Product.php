@@ -13,6 +13,8 @@ class Product extends Model
         'created_at','updated_at'
     ];
 
+    protected $appends = ['variantWarna','variantSize'];
+
     public function productphoto(){
         return $this->hasMany('Modules\Product\Entities\ProductPhoto','id_product','id');
     }
@@ -20,11 +22,19 @@ class Product extends Model
     public function productSubCategory() {
         return $this->hasMany('Modules\Product\Entities\SubCategories','id_product','id')
             ->join('categories','categories.id','=','categories_relation.categories')
-            ->select('categories.nama_categories');   
+            ->select('categories.nama_categories')->groupBy('categories.nama_categories');   
     }
     
     public function getProductNameCategory($category){
         return $this->where('created_at',$category)->get();
+    }
+
+    public function getVariantWarnaAttribute(){
+        return  $this->attributes['variantWarna'] = \Modules\Product\Entities\Variant::where('group','warna')->get();
+    }
+
+    public function getVariantSizeAttribute(){
+        return $this->attributes['variantSize'] = \Modules\Product\Entities\Variant::where('group','ukuran')->get();
     }
 
     public function getLowestAttribute(){

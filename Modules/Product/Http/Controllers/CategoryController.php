@@ -19,6 +19,7 @@ class CategoryController extends Controller
     }
     public function findcategory(Request $request, $category, $subcategory = null){
         $product = new Product;
+
         $data = [
             "content" => empty($subcategory) ? $product->getAllProduct($category) : $product->getAllProduct($category,$subcategory),
             "category"=> $category,

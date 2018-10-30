@@ -206,3 +206,20 @@ input[type="number"] {
   .imageslide img{
       width:100%;
   }
+
+  .variant-picker{
+      padding : 5px 0px;
+      margin:3px 2px;
+      background:#212121;
+      color: #ddd;
+      border-radius: 15%;
+      cursor: pointer;
+      text-align: center;
+      width: 50px;
+      text-transform: capitalize;
+  }
+
+  .variant-picker.focus{
+      border: #dff9fb solid;
+      box-shadow: -1px 0px 11.5px #dff9fb;
+  }

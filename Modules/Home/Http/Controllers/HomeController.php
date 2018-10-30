@@ -32,9 +32,15 @@ class HomeController extends Controller
         $list = app($this->ProductController)->getAllProduct();
 
         $category = collect($list->original);
+        $test = null;
+        $file = $category->groupBy('categories')->map(function($key,$idx){
+           
+            $key['subCategories'] = $key->pluck("subCategories")->unique('subCategories');
+            return $key;
+        });
 
         $data = [
-            "productlist" => $category->groupBy('categories')->toArray(),
+            "productlist" => $file,
             'cart'        => app($this->CartController)->getlistCart()->original['result'],
         ];
         

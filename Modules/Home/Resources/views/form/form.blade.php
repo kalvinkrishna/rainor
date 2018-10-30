@@ -49,7 +49,7 @@
  
   <div class="form-group">
     <label for="exampleInputEmail1">Address</label>
-    <textarea name="Address" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></textarea>
+    <textarea name="Address" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address"></textarea>
   </div>
 
   <div class='row'>

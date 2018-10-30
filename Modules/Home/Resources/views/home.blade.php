@@ -15,15 +15,17 @@
                     <h1 class='category'>Fashion {{ $idx }}</h1>
                     <div class="subcategories">
                                 <ul class='nav subcategory justify-content-center'>
-                                    @foreach($product as $value)
-                                        @foreach($value["subCategories"] as $tes)
-                                            <a href="{{url('product/collection/'.$idx.'/'.$tes)}}" class='subcategories'> {{$tes}}</a>
+                                    @foreach($product['subCategories'] as $value)
+                                        @foreach($value as $subcategories)
+                                            <a href="{{url('product/collection/'.$idx.'/'.$subcategories)}}" class='subcategories'> {{$subcategories}}</a>
                                         @endforeach
                                     @endforeach
                                 </ul>
                     </div>
                </div>
-                
+               @php
+                    unset($product['subCategories'])
+               @endphp
                @foreach($product as $value) 
                     <div class="product container">
                     @if($value['isBanner'])

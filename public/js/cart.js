@@ -1,5 +1,12 @@
 var click = true;
 
+$(document).ready(function(){
+    $(".variant-picker").click(function(){
+        $(this).parent().find('span.variant-picker').removeClass('focus');
+        $(this).addClass('focus');
+    });
+});
+
 $(document).ready(() => {
     getList();
 
