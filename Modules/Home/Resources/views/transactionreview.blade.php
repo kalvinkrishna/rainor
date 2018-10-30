@@ -27,11 +27,73 @@
         <div class='row'>
             @foreach($carts['data'] as $cart)
                 <div class="col-12">    
-                    <div class='col-2'>
-                        <img src="{{asset('image/'.$cart->photo[0]->url)}}">
+                    <div class='row product-info'>
+                        
+                        <div class='col-2 offset-1'>
+                            @if(!empty($cart->photo[0]))
+                                <img src="{{asset('image/'.$cart->photo[0]->url)}}" class="img-thumbnail"/>
+                            @else
+                                <img src="{{asset('image/500x500.png')}}" class="img-thumbnail"/>
+                            @endif
+                        </div>
+                        <div class='col-8'>
+                            <blockquote class="blockquote">
+                                <p class="mb-0">{{$cart->product_name}}</p>
+                                <footer class="blockquote-footer">{{$cart->description}} <cite title="Source Title">Source Title</cite></footer>
+                            </blockquote>
+                            <span>Ukuran : @if(!empty($cart->variantSize)){{$cart->variantSize[0]->key}}@endif </Span>
+                            <span>Warna : @if(!empty($cart->variantWarna[0])){{$cart->variantWarna[0]->key}}@endif </Span>
+                            <p class='lead'><strong>Jumlah Product : {{$cart->count}}</strong></p>
+                            <h2>Total : Rp. {{$cart->countprice}}</h2>
+                        </div>
                     </div>
                 </div>
             @endforeach
+        </div>
+        <br>
+        <h2>Shipping Information</h2>
+        <div class='col-12 shipping'>
+            <div class='row'>
+                <div class='col-4'>
+                    <img class='img-thumbnail mx-auto d-block col-10' src="{{asset('image/shipped.png')}}" alt="">
+                    <p class='text-center'>Darat</p>
+                </div>
+                <div class='col-4'>
+                    <img class='img-thumbnail mx-auto d-block col-10' src="{{asset('image/boat-from-front-view.png')}}" alt="">
+                    <p class='text-center'>Laut</p>
+                </div>
+                <div class='col-4'>
+                   
+                    <img class='img-thumbnail mx-auto d-block col-10' src="{{asset('image/airplane-shape.png')}}" alt="">
+                    <p class='text-center'>Udara</p>
+                </div>
+            </div>
+        </div>
+        <h2>Payment Method </h2>
+        <div class='col-12 payment'>
+            <div class='row'>
+                <div class='col-12 headerpayment'>
+                    <blockquote class="blockquote">
+                                    <p class="mb-0">Please make your transaction secure</p>
+                                    <footer class="blockquote-footer">{{$cart->description}} <cite title="Source Title">Source Title</cite></footer>
+                    </blockquote>
+
+                    <div class='row'>
+                        <div class='col-3'>
+                            <img class='img-thumbnail' src="{{asset('image/bca-bank-central-asia-logo.png')}}" alt="">
+                        </div>
+                        <div class='col-3'>
+                            <img class='img-thumbnail' src="{{asset('image/1280px-BNI_logo.svg.png')}}" alt="">
+                        </div>
+                        <div class='col-3'>
+                            <img class='img-thumbnail' src="{{asset('image/Logo_BRI.png')}}" alt="">
+                        </div>
+                        <div class='col-3'>
+                            <img class='img-thumbnail' src="{{asset('image/mandiri.jpg')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <br>
         <div class='row'>

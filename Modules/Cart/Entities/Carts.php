@@ -27,17 +27,19 @@ class Carts extends Model
 
     public function getAllCartAttribute(){
         $cartList = \Modules\Product\Entities\Product::join('cart','product.id','=','cart.id_products')->where('id_user', 0)
-            ->select("product.*",DB::raw('count(id_products) as count'))
-            ->groupBy('id_products')->get();
-            
+            ->groupBy('cart.id_products')
+            ->select("product.*",DB::raw('count(id_products) as count'),DB::raw('sum(price) as countprice'))
+            ->get();
+
         foreach($cartList as $product){
             $product->price =  number_format($product->price ,0,'','.');
+            $product->countprice = number_format($product->countprice,0,'','.');
             $product->photo =  Product::find($product->id)->productphoto;
         }
 
         return $cartList;
     }
-
+    
     public function getPriceCountAttribute(){
         $product = $this->join('product','product.id','=','cart.id_products')->get()->sum('price');
         return  number_format($product ,0,'','.');

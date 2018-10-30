@@ -8,7 +8,7 @@ $(document).ready(function(){
             $("select[name='Cities']").html("");
 
             $.each(result,function(index,value){
-                $("select[name='Cities']").append("<option value='"+value.id+"'>"+value.name+"</option>");
+                $("select[name='Cities']").append("<option value='"+value.id_city+"'>"+value.name+"</option>");
             });   
         }
     });
@@ -37,8 +37,8 @@ $(document).ready(function(){
                 
                 $("select[name='Cities']").html("");
 
-                $.each(result,function(index,value){
-                    $("select[name='Cities']").append("<option value='"+value.id+"'>"+value.name+"</option>");
+                $.each(result,function(index,value){ console.log(value);
+                    $("select[name='Cities']").append("<option value='"+value.id_city+"'>"+value.name+"</option>");
                 });   
             }
         });

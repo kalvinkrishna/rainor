@@ -226,3 +226,28 @@ input[type="number"] {
       border: #dff9fb solid;
       box-shadow: -1px 0px 11.5px #dff9fb;
   }
+  .product-info > div{
+    background: #ddd;
+    margin-top:15px;
+    padding-top:15px;
+    padding-bottom: 15px;
+  }
+
+  span{
+      text-transform: capitalize;
+  }
+
+  .headerpayment{
+      border-bottom: 2px solid black;
+  }
+
+  .shipping{
+      background: #fff;
+  }
+  .shipping > div {
+      padding-top: 15px;
+  }
+  .shipping img{
+      background:beige;
+      border: none;
+  }
