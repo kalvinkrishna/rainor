@@ -52,27 +52,27 @@
                                         <h4>{{ $product->product_name }}<h4>
                                         <h5>Rp. {{ $product->price }}</h5>
                                        
-                                        @if(!empty($product->variantWarna))
+                                        <!-- @if(!empty($product->variantWarna))
                                             <div class='row variant ukuran'>
                                                 @foreach($product->variantWarna as $color)
                                                     <span class='variant-picker' data-key="{{$color->id}}">{{$color->key}}</span>
                                                 @endforeach
                                             </div>
-                                        @endif
+                                        @endif -->
 
-                                        @if(!empty($product->variantSize))
+                                        <!-- @if(!empty($product->variantSize))
                                             <div class='row variant ukuran'>
                                                 @foreach($product->variantSize as $size)
                                                     <span class='variant-picker' data-key="{{$size->id}}">{{$size->key}}</span>
                                                 @endforeach
                                             </div>
-                                        @endif
+                                        @endif -->
                                     </div>
                                     
                                     <div class="col-5">
                                         <button type='button' class='btn btn-primary btn-lg' onClick='addCart({{$product->id_product}})' data-items='{{ $product->id_product }}'>Add to Cart <span class="oi oi-cart" title="icon name" aria-hidden="true"></span></button>
                                     </div>
-                                    <div class="detail"><span class="oi oi-chevron-bottom"></span></div>
+                                    <div class="detail" style='left:auto;'><a href="#" style='color:#FFFFFF !important;'>cek detail product</a></div>
                                 </div>
                             </div>
                            

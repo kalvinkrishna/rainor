@@ -42,10 +42,10 @@
         </section>
 
         <section class='price row align-items-end'>
-            <div class='col-8'>
+            <div class='col-7'>
                Total :  Rp. <span class='total'>0</span>
             </div>
-            <div class='col-4'>Jumlah Item: <span class="totalbarang"> 1 </span> </div>
+            <div class='col-5'>jumlah produk: <span class="totalbarang"> 1 </span> </div>
             <a href='{{url("/home/next")}}' class='col-12'> <button type="button" class="btn btn-primary col-12">Lanjutkan</button></a>
         </section>
     </section>

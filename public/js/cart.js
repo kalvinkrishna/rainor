@@ -72,11 +72,17 @@ addCart = ($idproduct) => {
             if(result.status == "success"){
                 getList();
             }
+
+            $(".cartcontroller").css({
+                'opacity': 1,
+                'width' : '24%'
+            });
         },
         error:function(e){
             console.log(e);
         }
     });
+    
 }
 
 getList = () => {
@@ -101,23 +107,7 @@ getList = () => {
                             template += '<div class="media-body">';
                             template += '<h5 class="mt-0">'+value.product_name+'</h5>';
 
-                            template += '<div class="mt-12">';
-                            
-                            $.each(value.variantSize,function(idx,variant){
-                             
-                                template += "<span class='variant-picker carts' data-key='"+variant.id+"'>"+variant.key+"</span>";
-                                
-                            });
-                            template += '</div>';
-                            
-                            template += '<div class="mt-12">';
-                            
-                            $.each(value.variantWarna,function(idx,variant){
-                             
-                                template += "<span class='variant-picker carts' data-key='"+variant.id+"'>"+variant.key+"</span>";
-                                
-                            });
-                            template += '</div>';
+                            template += '<textarea class="form-control" placeholder="masukkan warna dan ukuran"></textarea>';
 
                             template += '<br>';
                             template += ' <div class="mt-12">Rp.'+value.price+'</div>';
@@ -128,7 +118,7 @@ getList = () => {
                             template += '</div>';
                             template += '</div>';
 
-                        template += '<div class="detail"><span class="oi oi-chevron-bottom"></span></div>';
+                        template += '<div class="detail"></div>';
                         template += '</div>';
 
                         $('.cartcontent').append(template);
@@ -144,20 +134,8 @@ getList = () => {
 
                             template += '<div class="mt-12">';
                             
-                            $.each(value.variantSize,function(idx,variant){
-                             
-                                template += "<span class='variant-picker carts' data-key='"+variant.id+"'>"+variant.key+"</span>";
-                                
-                            });
-                            template += '</div>';
-                            
-                            template += '<div class="mt-12">';
-                            
-                            $.each(value.variantWarna,function(idx,variant){
-                             
-                                template += "<span class='variant-picker carts' data-key='"+variant.id+"'>"+variant.key+"</span>";
-                                
-                            });
+                            template += '<textarea class="form-control" placeholder="masukkan warna dan ukuran"></textarea>';
+                        
                             template += '</div>';
 
                             template += '<br>';
@@ -169,7 +147,7 @@ getList = () => {
                             template += '</div>';
                             template += '</div>';
 
-                        template += '<div class="detail"><span class="oi oi-chevron-bottom"></span></div>';
+                        template += '<div class="detail"></div>';
                         template += '</div>';
 
 

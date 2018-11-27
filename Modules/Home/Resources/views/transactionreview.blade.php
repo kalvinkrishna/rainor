@@ -8,12 +8,18 @@
         <div class="row">
             <div class="col-6">    
                 <label for="exampleInputEmail1">Nama</label>
-                <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Nama" value="{{$customer['name']}}">
+                <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" value="{{$customer['name']}}">
             </div>
 
             <div class="col-6">    
                 <label for="exampleInputEmail1">Email</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Nama" value="{{$customer['email']}}">
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" value="{{$customer['email']}}">
+            </div>
+        </div>
+        <div class='row'>
+            <div class="col-12">    
+                <label for="exampleInputEmail1">Telephone</label>
+                <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone Number" value="{{$customer['phonenumber']}}">
             </div>
         </div>
         <div class="row">
@@ -41,10 +47,12 @@
                                 <p class="mb-0">{{$cart->product_name}}</p>
                                 <footer class="blockquote-footer">{{$cart->description}} <cite title="Source Title">Source Title</cite></footer>
                             </blockquote>
-                            <span>Ukuran : @if(!empty($cart->variantSize)){{$cart->variantSize[0]->key}}@endif </Span>
-                            <span>Warna : @if(!empty($cart->variantWarna[0])){{$cart->variantWarna[0]->key}}@endif </Span>
+                            <!-- <span>Ukuran : @if(!empty($cart->variantSize)){{$cart->variantSize[0]->key}}@endif </Span> -->
+                            <!-- <span>Warna : @if(!empty($cart->variantWarna[0])){{$cart->variantWarna[0]->key}}@endif </Span> -->
+
                             <p class='lead'><strong>Jumlah Product : {{$cart->count}}</strong></p>
                             <h2>Total : Rp. {{$cart->countprice}}</h2>
+                            <textarea class='form-control' placeholder='catatat pengguna' value={{isset($cart["description"]) ? $cart["description"] : ""}}></textarea>
                         </div>
                     </div>
                 </div>
@@ -96,7 +104,7 @@
         </div>
         <br>
         <div class='row'>
-                <button type="submit" class="btn col-3 btn-primary align-self-center mx-auto">Submit</button>
+              <a href="thankyou" style='color:#FFFFFF;' class="btn col-3 btn-primary align-self-center mx-auto">Bayar</a>
         </div>
 
     </div>
