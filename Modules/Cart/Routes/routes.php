@@ -4,4 +4,5 @@ Route::prefix('cart')->group(function() {
     Route::post('add','CartController@addCart');
     Route::get('list/delete/{id}','CartController@deleteCart');
     Route::get('list/delete/{id}/{qty}','CartController@deleteCart');
+    Route::post('updatenote','CartController@updateData');
 });

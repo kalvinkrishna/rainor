@@ -23,6 +23,7 @@ $(document).ready(() => {
     });
 
     $(document).on('click','.delete-count',function(){
+        
         deleteProduct($(this).data('items'),$(this).parents().find('.quantity').val());
        
         if($(this).parents().find('.quantity').val() == 0){
@@ -30,6 +31,7 @@ $(document).ready(() => {
         }
     });
     $(document).on('click','.plus-count',function(){
+        
         addCart($(this).data('items'));
     });
 
@@ -57,6 +59,31 @@ openCart = () => {
         });
    
 }
+
+$(document).ready(function(){
+    $(".lanjutkan").click(function(e){
+        e.preventDefault();
+        var baseurl = $(document).find('.base_url').val();
+        $.each($(".cartcontroller").find('textarea'),function(index,value){
+            $.ajax({
+                url : baseurl + "/cart/updatenote",
+                method: 'POST',
+                data : {
+                    _token: $("input[name='_token']").val(),
+                    idproduct : value.name,
+                    valueproduct : value.value
+                },
+                success:function(result){
+                    console.log(result);
+                    //window.location.href = baseurl + "/home/next"
+                },
+                error:function(e){
+                    console.log(e);
+                }
+            });
+        });
+    });
+});
 
 addCart = ($idproduct) => {
     var baseurl = $(document).find('.base_url').val();

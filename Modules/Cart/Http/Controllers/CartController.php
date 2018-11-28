@@ -73,4 +73,23 @@ class CartController extends Controller
         $cart->delete();
     }
 
+    public function updateData(Request $request){
+       
+        try{
+            $update = Carts::where('id_products',$request->input('idproduct'))->update([
+                'note' => $request->input('valueproduct')
+            ]);
+
+            return response()->json([
+                "status" => "success"
+            ]);
+        } catch(\Exception $e){
+            return [
+                "status" => "fail",
+                "messages" => [
+                    $e->getMessage()
+                ]
+            ];
+        }
+    }
 }
