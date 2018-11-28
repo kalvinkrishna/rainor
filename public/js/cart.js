@@ -75,7 +75,7 @@ $(document).ready(function(){
                 },
                 success:function(result){
                     console.log(result);
-                    //window.location.href = baseurl + "/home/next"
+                    window.location.href = baseurl + "/home/next"
                 },
                 error:function(e){
                     console.log(e);
