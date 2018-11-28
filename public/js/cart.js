@@ -94,10 +94,11 @@ getList = () => {
            
             if(result_dua.status == "success"){
                 let data = result_dua.result.data;
-            
+                
                 $('.cartcontent').html("");
                 $.each(data,function(index,value){
                     var imagePath = baseurl+'/image/';
+                    
                     try{
                         imagePath += value.photo[0].url;
 
@@ -107,7 +108,7 @@ getList = () => {
                             template += '<div class="media-body">';
                             template += '<h5 class="mt-0">'+value.product_name+'</h5>';
 
-                            template += '<textarea class="form-control" placeholder="masukkan warna dan ukuran"></textarea>';
+                            template += '<textarea class="form-control" name="'+value.id+'" placeholder="masukkan warna dan ukuran">'+value.note+'</textarea>';
 
                             template += '<br>';
                             template += ' <div class="mt-12">Rp.'+value.price+'</div>';
@@ -134,7 +135,7 @@ getList = () => {
 
                             template += '<div class="mt-12">';
                             
-                            template += '<textarea class="form-control" placeholder="masukkan warna dan ukuran"></textarea>';
+                            template += '<textarea class="form-control"  name="'+value.id+'" placeholder="masukkan warna dan ukuran">'+value.note+'</textarea>';
                         
                             template += '</div>';
 
@@ -157,7 +158,6 @@ getList = () => {
                     }
                 });
                
-                console.log(result_dua.result);
                 $(".count").html(result_dua.result.count);
                 $(".total").html(result_dua.result.price);
                 $(".totalbarang").html(result_dua.result.count);

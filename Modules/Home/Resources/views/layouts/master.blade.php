@@ -22,6 +22,7 @@
         @yield('cart')
         @yield('review')
         @yield('collection')
+        @yield('contact')
         {{-- Laravel Mix - JS File --}}
         {{-- <script src="{{ mix('js/home.js') }}"></script> --}}
     </body>

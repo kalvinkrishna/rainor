@@ -8,7 +8,7 @@
                 <ul class="nav flex-column">
                     <li class='nav-link'> <a class="nav-link active" href="#">tentang salestok</a></li>
                     <li class='nav-link'><a class="nav-link" href="#">karir</a></li>
-                    <li class='nav-link'><a class="nav-link" href="#">Kontak Soraya</a></li>
+                    <li class='nav-link'><a class="nav-link" href="{{url('home/contact')}}">Kontak Soraya</a></li>
                 </ul>
             </div>
             <div class="col-6 text-center">

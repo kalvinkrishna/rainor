@@ -13,6 +13,7 @@
 
 Route::prefix('home')->group(function() {
     Route::get('/', 'HomeController@index');
-    Route::get('next','HomeController@biodata');
+    Route::post('next','HomeController@biodata');
     Route::post('review','HomeController@review');
+    Route::get('contact','HomeController@contact');
 });

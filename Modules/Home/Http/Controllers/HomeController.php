@@ -11,6 +11,7 @@ use Modules\Home\Entities\Country;
 use Modules\Home\Entities\State;
 use Modules\Cart\Entities\Carts;
 
+
 class HomeController extends Controller
 {
     /**
@@ -47,8 +48,8 @@ class HomeController extends Controller
         return view('home::home',$data);
     }
 
-    public function biodata(Request $request){
-        $this->updateproduct($request);
+    public function biodata(Request $request){ 
+        $this->updateproduct($request->except('quantity'));
         $data = [
             'cart'        => app($this->CartController)->getlistCart()->original['result'],
             'country'     => Country::all(),
@@ -79,6 +80,18 @@ class HomeController extends Controller
     }
 
     private function updateproduct($request){
-        
+        foreach($request as $key => $id ){
+         
+            Carts::where('cart.id_products',$key)->update([
+                'note' => $request[$key]
+            ]);
+        }
+    }
+
+    function contact(){
+        $data = [
+            'cart'        => app($this->CartController)->getlistCart()->original['result'],
+        ];
+        return view("home::contact",$data);
     }
 }

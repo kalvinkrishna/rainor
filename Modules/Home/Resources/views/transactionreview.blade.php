@@ -52,7 +52,7 @@
 
                             <p class='lead'><strong>Jumlah Product : {{$cart->count}}</strong></p>
                             <h2>Total : Rp. {{$cart->countprice}}</h2>
-                            <textarea class='form-control' placeholder='catatat pengguna' value={{isset($cart["description"]) ? $cart["description"] : ""}}></textarea>
+                            <textarea class='form-control' placeholder='catatat pengguna'>{{$cart->note}}</textarea>
                         </div>
                     </div>
                 </div>

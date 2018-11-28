@@ -28,7 +28,7 @@ class Carts extends Model
     public function getAllCartAttribute(){
         $cartList = \Modules\Product\Entities\Product::join('cart','product.id','=','cart.id_products')->where('id_user', 0)
             ->groupBy('cart.id_products')
-            ->select("product.*",DB::raw('count(id_products) as count'),DB::raw('sum(price) as countprice'))
+            ->select("product.*",DB::raw('count(id_products) as count'),DB::raw('sum(price) as countprice'),'cart.note')
             ->get();
 
         foreach($cartList as $product){

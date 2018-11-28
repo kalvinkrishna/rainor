@@ -7,6 +7,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
+    <form method="post" action="{{url('home/next')}}"> 
         <section class='container cartcontent'>
             @foreach($cart['data'] as $items => $item)
                 <div class="media">
@@ -46,8 +47,9 @@
                Total :  Rp. <span class='total'>0</span>
             </div>
             <div class='col-5'>jumlah produk: <span class="totalbarang"> 1 </span> </div>
-            <a href='{{url("/home/next")}}' class='col-12'> <button type="button" class="btn btn-primary col-12">Lanjutkan</button></a>
+            <button type="submit" class="btn btn-primary col-12">Lanjutkan</button></a>
         </section>
+    </form>
     </section>
 
     <form action="">
